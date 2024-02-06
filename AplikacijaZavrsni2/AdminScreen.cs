@@ -1,5 +1,4 @@
-﻿using ServisAplikacija.Data;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,21 +24,20 @@ namespace AplikacijaZavrsni2.Data
         private void button2_Click(object sender, EventArgs e)
         {
             //brisanje
-
+            RemoveUser removeUser = new RemoveUser(dbContext);
+            removeUser.Show();
 
         }
 
         private void btnAdminScreenAddUser_Click(object sender, EventArgs e)
         {
             AddUser adduser = new AddUser(dbContext);
-            this.Hide();
             adduser.Show();
         }
 
         private void btnAdminScreenUserOverview_Click(object sender, EventArgs e)
         {
             UserOverview userOverview = new UserOverview(dbContext);
-            this.Hide();
             userOverview.Show();
         }
     }

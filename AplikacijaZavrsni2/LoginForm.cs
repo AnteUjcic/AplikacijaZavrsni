@@ -1,6 +1,5 @@
 ﻿using AplikacijaZavrsni2.Data;
 using Microsoft.EntityFrameworkCore;
-using ServisAplikacija.Data;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -40,22 +39,20 @@ namespace AplikacijaZavrsni2
             {
                 using (var dbContext = new MechanicContext())
                 {
+
+
                     try
                     {
-                        // Attempt to open the connection
                         dbContext.Database.OpenConnection();
 
-                        // If no exception is thrown, the connection is successful
-                        Console.WriteLine("Connected to the database.");
+                        Console.WriteLine("Spojen na bazu.");
                     }
                     catch (Exception ex)
                     {
-                        // Handle the exception if there is an issue with the connection
-                        Console.WriteLine("Error connecting to the database: " + ex.Message);
+                        Console.WriteLine("Greska s povezivanjem na bazu: " + ex.Message);
                     }
                     finally
                     {
-                        // Always close the connection when done
                         dbContext.Database.CloseConnection();
                     }
                 }
@@ -68,7 +65,7 @@ namespace AplikacijaZavrsni2
                 {
 
                     AdminScreen adminmode = new Data.AdminScreen(dbContext);
-                    
+
                     adminmode.Show();
 
 
@@ -79,17 +76,20 @@ namespace AplikacijaZavrsni2
                 }
                 else
                 {
-
                     var user = dbContext.LoginInfos.FirstOrDefault(li => li.Username == username && li.Password == password);
 
                     if (user != null)
                     {
 
+
+                        PocetnaForma userDashboard = new PocetnaForma(dbContext);
+                        userDashboard.Show();
+
                         this.Hide();
                     }
                     else
                     {
-                        MessageBox.Show("Kriva sifra ili korisnik.");
+                        MessageBox.Show("Kriva šifra ili korisnik.");
                     }
                 }
             }

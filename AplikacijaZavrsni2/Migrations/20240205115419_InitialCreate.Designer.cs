@@ -4,14 +4,13 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using ServisAplikacija.Data;
 
 #nullable disable
 
 namespace AplikacijaZavrsni2.Migrations
 {
     [DbContext(typeof(MechanicContext))]
-    [Migration("20240204232748_InitialCreate")]
+    [Migration("20240205115419_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />

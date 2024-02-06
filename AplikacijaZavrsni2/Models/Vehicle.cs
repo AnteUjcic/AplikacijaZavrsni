@@ -8,6 +8,7 @@ namespace ServisAplikacija.Models
 {
     public class Vehicle
     {
+
         public int IDVehicle { get; set; }
         public string Brand { get; set; }
         public int Year { get; set; }

@@ -1,4 +1,4 @@
-﻿using ServisAplikacija.Data;
+﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,11 +29,16 @@ namespace AplikacijaZavrsni2.Data
 
         private void btnUserOverviewShow_Click(object sender, EventArgs e)
         {
-            var allWorkers = dbContext.Workers.ToList();
+            var allWorkers = dbContext.Workers
+                            .Include(w => w.Services)
+                            .Include(w => w.LoginInfo)
+                            .ToList();
 
             dataGridView1.DataSource = allWorkers;
 
-            dataGridView1.Columns["OIB"].Visible = false;
+            dataGridView1.Columns["LoginInfo"].Visible = false;
+            dataGridView1.Columns["Services"].Visible = false;
+
         }
     }
 }

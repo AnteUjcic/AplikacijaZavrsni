@@ -8,6 +8,7 @@ namespace ServisAplikacija.Models
 {
     public class Service
     {
+
         public string ServiceType { get; set; }
         public DateOnly DateOfservice { get; set; }
         public double KMService { get; set; }

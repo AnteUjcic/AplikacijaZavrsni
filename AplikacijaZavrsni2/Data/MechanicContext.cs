@@ -7,23 +7,21 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using ServisAplikacija.Models;
 
-namespace ServisAplikacija.Data
+namespace AplikacijaZavrsni2
 {
     public class MechanicContext : DbContext
     {
-
-
         public DbSet<Vehicle> Vehicle { get; set; }
         public DbSet<LoginInfo> LoginInfos { get; set; }
         public DbSet<Worker> Workers { get; set; }
         public DbSet<Service> Services { get; set; }
-
-
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-           string currentDir=Directory.GetCurrentDirectory();
-            string databasePath = Path.Combine(currentDir, "..", "MechanicDB.db");
-            optionsBuilder.UseSqlite("Data Source={databasePath}");
+            string workingDirectory = Environment.CurrentDirectory;
+           string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.FullName;
+            string databasePath = Path.Combine(projectDirectory, "MechanicDB.db");
+
+            optionsBuilder.UseSqlite($"Data Source={databasePath}");
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -58,8 +56,11 @@ namespace ServisAplikacija.Data
                     .OnDelete(DeleteBehavior.ClientSetNull);
             });
 
+            modelBuilder.Entity<Service>()
+                    .HasOne(s => s.Vehicle)
+                    .WithMany(v => v.Services)
+                    .OnDelete(DeleteBehavior.Cascade);
 
-  
 
             base.OnModelCreating(modelBuilder);
         }

@@ -36,18 +36,22 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(64, 50);
+            dataGridView1.Location = new Point(185, 154);
+            dataGridView1.Margin = new Padding(3, 4, 3, 4);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(240, 150);
+            dataGridView1.Size = new Size(430, 289);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // btnUserOverviewShow
             // 
-            btnUserOverviewShow.Location = new Point(353, 273);
+            btnUserOverviewShow.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnUserOverviewShow.Location = new Point(674, 154);
+            btnUserOverviewShow.Margin = new Padding(3, 4, 3, 4);
             btnUserOverviewShow.Name = "btnUserOverviewShow";
-            btnUserOverviewShow.Size = new Size(75, 23);
+            btnUserOverviewShow.Size = new Size(117, 61);
             btnUserOverviewShow.TabIndex = 1;
             btnUserOverviewShow.Text = "Prikaz";
             btnUserOverviewShow.UseVisualStyleBackColor = true;
@@ -55,13 +59,16 @@
             // 
             // UserOverview
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = Color.Maroon;
+            ClientSize = new Size(914, 600);
             Controls.Add(btnUserOverviewShow);
             Controls.Add(dataGridView1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "UserOverview";
-            Text = "UserOverview";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Pregled Korisnika";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }

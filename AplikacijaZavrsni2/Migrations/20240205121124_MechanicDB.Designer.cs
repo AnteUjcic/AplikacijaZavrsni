@@ -3,6 +3,7 @@ using System;
 using AplikacijaZavrsni2;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AplikacijaZavrsni2.Migrations
 {
     [DbContext(typeof(MechanicContext))]
-    partial class MechanicContextModelSnapshot : ModelSnapshot
+    [Migration("20240205121124_MechanicDB")]
+    partial class MechanicDB
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.11");
@@ -38,7 +41,7 @@ namespace AplikacijaZavrsni2.Migrations
                     b.HasIndex("OIB")
                         .IsUnique();
 
-                    b.ToTable("LoginInfos", (string)null);
+                    b.ToTable("LoginInfos");
                 });
 
             modelBuilder.Entity("ServisAplikacija.Models.Service", b =>
@@ -66,7 +69,7 @@ namespace AplikacijaZavrsni2.Migrations
 
                     b.HasIndex("IDVehicle");
 
-                    b.ToTable("Services", (string)null);
+                    b.ToTable("Services");
                 });
 
             modelBuilder.Entity("ServisAplikacija.Models.Vehicle", b =>
@@ -102,7 +105,7 @@ namespace AplikacijaZavrsni2.Migrations
 
                     b.HasKey("IDVehicle");
 
-                    b.ToTable("Vehicle", (string)null);
+                    b.ToTable("Vehicle");
                 });
 
             modelBuilder.Entity("ServisAplikacija.Models.Worker", b =>
@@ -121,7 +124,7 @@ namespace AplikacijaZavrsni2.Migrations
 
                     b.HasKey("OIB");
 
-                    b.ToTable("Workers", (string)null);
+                    b.ToTable("Workers");
                 });
 
             modelBuilder.Entity("ServisAplikacija.Models.LoginInfo", b =>

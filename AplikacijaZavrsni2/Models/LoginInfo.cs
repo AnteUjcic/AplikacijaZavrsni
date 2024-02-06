@@ -11,9 +11,7 @@ namespace ServisAplikacija.Models
         public long IDLogin { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
-
         public long OIB { get; set; }
-
         public Worker Worker { get; set; }
 
 

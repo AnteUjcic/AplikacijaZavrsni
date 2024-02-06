@@ -35,19 +35,23 @@
             // 
             // btnAdminScreenAddUser
             // 
-            btnAdminScreenAddUser.Location = new Point(281, 93);
+            btnAdminScreenAddUser.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAdminScreenAddUser.Location = new Point(205, 93);
+            btnAdminScreenAddUser.Margin = new Padding(3, 4, 3, 4);
             btnAdminScreenAddUser.Name = "btnAdminScreenAddUser";
-            btnAdminScreenAddUser.Size = new Size(115, 23);
+            btnAdminScreenAddUser.Size = new Size(159, 80);
             btnAdminScreenAddUser.TabIndex = 0;
-            btnAdminScreenAddUser.Text = "Dodavanje novog korinsika";
+            btnAdminScreenAddUser.Text = "Dodavanje korinsika";
             btnAdminScreenAddUser.UseVisualStyleBackColor = true;
             btnAdminScreenAddUser.Click += btnAdminScreenAddUser_Click;
             // 
             // btnAdminScreenRemoveUser
             // 
-            btnAdminScreenRemoveUser.Location = new Point(279, 146);
+            btnAdminScreenRemoveUser.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAdminScreenRemoveUser.Location = new Point(205, 263);
+            btnAdminScreenRemoveUser.Margin = new Padding(3, 4, 3, 4);
             btnAdminScreenRemoveUser.Name = "btnAdminScreenRemoveUser";
-            btnAdminScreenRemoveUser.Size = new Size(117, 23);
+            btnAdminScreenRemoveUser.Size = new Size(159, 80);
             btnAdminScreenRemoveUser.TabIndex = 1;
             btnAdminScreenRemoveUser.Text = "Brisanje korisnika";
             btnAdminScreenRemoveUser.UseVisualStyleBackColor = true;
@@ -55,9 +59,11 @@
             // 
             // btnAdminScreenUserOverview
             // 
-            btnAdminScreenUserOverview.Location = new Point(281, 201);
+            btnAdminScreenUserOverview.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAdminScreenUserOverview.Location = new Point(205, 432);
+            btnAdminScreenUserOverview.Margin = new Padding(3, 4, 3, 4);
             btnAdminScreenUserOverview.Name = "btnAdminScreenUserOverview";
-            btnAdminScreenUserOverview.Size = new Size(115, 23);
+            btnAdminScreenUserOverview.Size = new Size(159, 80);
             btnAdminScreenUserOverview.TabIndex = 2;
             btnAdminScreenUserOverview.Text = "Pregled korisnika";
             btnAdminScreenUserOverview.UseVisualStyleBackColor = true;
@@ -65,14 +71,17 @@
             // 
             // AdminScreen
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = Color.Maroon;
+            ClientSize = new Size(554, 600);
             Controls.Add(btnAdminScreenUserOverview);
             Controls.Add(btnAdminScreenRemoveUser);
             Controls.Add(btnAdminScreenAddUser);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "AdminScreen";
-            Text = "AdminScreen";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Admin";
             ResumeLayout(false);
         }
 

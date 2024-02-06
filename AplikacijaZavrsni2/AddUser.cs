@@ -1,5 +1,4 @@
-﻿using ServisAplikacija.Data;
-using ServisAplikacija.Models;
+﻿using ServisAplikacija.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,7 +20,7 @@ namespace AplikacijaZavrsni2.Data
             InitializeComponent();
             this.dbContext = dbContext;
         }
-        private long GenerateUniqueIDLogin()
+        private long GenerateUniqueID()
         {
             long timestamp = DateTimeOffset.Now.ToUnixTimeMilliseconds();
 
@@ -37,6 +36,7 @@ namespace AplikacijaZavrsni2.Data
         {
             try
             {
+
                 string name = txtAddUserName.Text;
                 string surename = txtAddUserSurename.Text;
                 long AddUserOIB = Convert.ToInt64(txtAddUserOIB.Text);
@@ -53,7 +53,7 @@ namespace AplikacijaZavrsni2.Data
                 LoginInfo newUser = new LoginInfo
                 {
 
-                    IDLogin = GenerateUniqueIDLogin(),
+                    IDLogin = GenerateUniqueID(),
                     Username = username,
                     Password = password,
                     OIB = AddUserOIB,

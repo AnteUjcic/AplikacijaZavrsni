@@ -28,12 +28,54 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "PregledVozila";
+            dataGridView1 = new DataGridView();
+            btnPregledVozila = new Button();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            SuspendLayout();
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(38, 57);
+            dataGridView1.Margin = new Padding(3, 4, 3, 4);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.Size = new Size(1183, 499);
+            dataGridView1.TabIndex = 0;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // btnPregledVozila
+            // 
+            btnPregledVozila.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnPregledVozila.Location = new Point(1227, 57);
+            btnPregledVozila.Margin = new Padding(3, 4, 3, 4);
+            btnPregledVozila.Name = "btnPregledVozila";
+            btnPregledVozila.Size = new Size(114, 48);
+            btnPregledVozila.TabIndex = 1;
+            btnPregledVozila.Text = "Ucitaj";
+            btnPregledVozila.UseVisualStyleBackColor = true;
+            btnPregledVozila.Click += btnPregledVozila_Click;
+            // 
+            // PregledVozila
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Maroon;
+            ClientSize = new Size(1363, 600);
+            Controls.Add(btnPregledVozila);
+            Controls.Add(dataGridView1);
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "PregledVozila";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Pregled Vozila";
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private DataGridView dataGridView1;
+        private Button btnPregledVozila;
     }
 }
